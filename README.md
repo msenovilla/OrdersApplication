@@ -23,3 +23,16 @@ The input csv must have this headers columns:
 
 The input file name must be included at application call, for example:
 java -jar OrdersAplication-0.0.1-SNAPSHOT.jar C:\\inputFile.csv
+mvn spring-boot:run -Dspring-boot.run.arguments=--C:\\inputFile.csv
+
+Technologies used for this project:
+- IDE Eclipse 2018, with pluggins:
+  - Spring IDE
+  - Checkstyle
+  - Web Tools
+- Java SE 1.8 
+- Spring Boot (version 2) https://spring.io/projects/spring-boot
+- Spring Batch https://spring.io/projects/spring-batch
+- Maven https://maven.apache.org/
+- JUnit https://junit.org/junit5/
+- H2 http://www.h2database.com/html/main.html
