@@ -2,10 +2,10 @@
 Application for import and process information about orders
 
 Given a .csv with orders records, the application will:
-- stores all the information in a internal BBDD
-- generates a processed csv, with all the original data ordered by "orderId"
+- stores all the information in an internal BBDD
+- generates a processed csv, with all the original data sorted by "orderId"
 
-The input csv must have this headers columns:
+The input csv file must have these headers columns:
 - Region
 - Country
 - Item Type
