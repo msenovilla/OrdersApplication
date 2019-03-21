@@ -18,6 +18,7 @@ import org.springframework.batch.item.database.builder.JdbcBatchItemWriterBuilde
 import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.builder.FlatFileItemReaderBuilder;
 import org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper;
+import org.springframework.batch.item.file.separator.SimpleRecordSeparatorPolicy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -68,6 +69,7 @@ public class Step1 {
     flatItemReader.resource(resource);
     flatItemReader.name("orderItemReader");
     flatItemReader.linesToSkip(1); // Avoid first line
+    flatItemReader.recordSeparatorPolicy(new BlankLineRecordSeparatorPolicy());
     flatItemReader.delimited().names(fileProperties.getColumns().toArray(new String[0]));
 
     flatItemReader.fieldSetMapper(new BeanWrapperFieldSetMapper<OrderEntity>() {
@@ -94,6 +96,23 @@ public class Step1 {
     itemWriterBuilder.sql(QUERY_INSERT_ORDERS);
 
     return itemWriterBuilder.build();
+
+  }
+
+  class BlankLineRecordSeparatorPolicy extends SimpleRecordSeparatorPolicy {
+
+    @Override
+    public boolean isEndOfRecord(final String line) {
+      return line.trim().length() != 0 && super.isEndOfRecord(line);
+    }
+
+    @Override
+    public String postProcess(final String record) {
+      if (record == null || record.trim().length() == 0) {
+        return null;
+      }
+      return super.postProcess(record);
+    }
 
   }
 
