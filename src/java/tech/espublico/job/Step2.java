@@ -1,6 +1,6 @@
 package tech.espublico.job;
 /**
- * Class where step 2 of job is defined. In this step, it reads from BBDD at store the information
+ * Class where step 2 of job is defined. In this step, it reads from DB at store the information
  * at a CSV processing the information.
  * 
  * @autor Miriam Senovilla
@@ -41,7 +41,7 @@ public class Step2 {
   private FileProperties fileProperties;
 
   /**
-   * Reader of BBDD to extract all the orders.
+   * Reader of DB to extract all the orders.
    * 
    * @param dataSource Datasource
    * @return OrderEntity with the order

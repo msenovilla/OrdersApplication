@@ -15,7 +15,7 @@ public class OrderEntityMapper implements RowMapper<OrderEntity> {
   /**
    * Maps a ResultSet into a OrderEntity.
    * 
-   * @param rs ResultSet from BBDD
+   * @param rs ResultSet from DB
    * @param rowNum Row num of result set
    * @return OrderEntity
    */

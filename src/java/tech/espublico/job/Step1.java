@@ -1,7 +1,7 @@
 package tech.espublico.job;
 /**
  * Class where step 1 of job is defined. In this step, it reads from original CSV at store the
- * information at BBDD.
+ * information at DB.
  * 
  * @autor Miriam Senovilla
  * @version 1.0
@@ -79,7 +79,7 @@ public class Step1 {
   }
 
   /**
-   * Bean for write to BBDD.
+   * Bean for write to DB.
    * 
    * @param dataSource Datasource
    * @return JdbcBatchItemWriter

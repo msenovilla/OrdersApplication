@@ -37,11 +37,11 @@ public class BatchConfiguration {
     LOG.debug("=== job ===");
 
     try {
-      //Step for read from CSV and store on DB
+      //Step for read from CSV and store on BBDD
       Step s1 = sbf.get("step1").<OrderEntity, OrderEntity>chunk(10).reader(step1.fileReader())
           .writer(step1.jdbcWriter(null)).build();
 
-      //Step for read from DB and write to processed CSV
+      //Step for read from BBDD and write to processed CSV
       Step s2 = sbf.get("step2").<OrderEntity, OrderEntity>chunk(10).reader(step2.reader(null))
           .writer(step2.databaseCsvItemWriter()).build();
 
