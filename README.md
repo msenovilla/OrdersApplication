@@ -21,9 +21,9 @@ The input csv file must have these headers columns:
 - Total Cost
 - Total Profit
 
-The input file name must be included at application call, for example:
-java -jar OrdersAplication-0.0.1-SNAPSHOT.jar C:\\inputFile.csv
-mvn spring-boot:run -Dspring-boot.run.arguments=--C:\\inputFile.csv
+The input file name must be included at application call, for example:<br/>
+java -jar OrdersAplication-0.0.1-SNAPSHOT.jar C:\\inputFile.csv</code><br>
+mvn spring-boot:run -Dspring-boot.run.arguments=--C:\\inputFile.csv</code>
 
 Technologies used for this project:
 - IDE Eclipse 2018, with pluggins:
