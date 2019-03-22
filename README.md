@@ -22,7 +22,7 @@ The input csv file must have these headers columns:
 - Total Profit
 
 The input file name must be included at application call, for example:<br/>
-java -jar OrdersAplication-0.0.1-SNAPSHOT.jar C:\\inputFile.csv</code><br>
+java -jar OrdersApplication-0.0.1-SNAPSHOT.jar C:\\inputFile.csv</code><br>
 mvn spring-boot:run -Dspring-boot.run.arguments=--C:\\inputFile.csv</code>
 
 Technologies used for this project:
