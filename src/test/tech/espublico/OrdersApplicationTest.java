@@ -1,7 +1,6 @@
 package tech.espublico;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileDescriptor;
@@ -10,8 +9,10 @@ import java.io.PrintStream;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.mockito.junit.MockitoJUnitRunner;
 
-
+@RunWith(MockitoJUnitRunner.Silent.class)
 class OrdersApplicationTest {
 
   private static final String FILENAME = "D:\\\\RegistroVentas1.csv";
