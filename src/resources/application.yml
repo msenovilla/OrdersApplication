@@ -3,15 +3,16 @@ logging:
   level: 
     root: info
     org.hibernate: error
-    tech.espublico: warn
-    
+    tech.espublico: info
   pattern:
     dateformat: dd-MM-yyyy HH:mm:ss
+    console: 
+  file: /tmp/ordersApplication.log
 
 spring:
   datasource:
     driver-class-name: org.h2.Driver
-    url: jdbc:h2:./data/db
+    url: jdbc:h2:file:./ordersAppDb
     username: sa 
     password: sa
     data:
@@ -21,7 +22,7 @@ spring:
     console:
       enabled: true
   jpa:
-    show-sql: true
+    show-sql: false
     hibernate:
       ddl-auto: update
     database-platform: org.hibernate.dialect.H2Dialect
